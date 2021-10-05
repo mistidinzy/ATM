@@ -3,13 +3,19 @@ using Xunit;
 
 namespace ATM.Tests
 {
-    public class UnitTest1
+    public class ATMTests
     {
         [Fact]
-        public void Test1()
+        public void GetBalance_Returns_Current_Balance()
         {
-            int zero = 1 - 2;
-            int num = 7 / zero;
+            // Arrange
+            BankAccount checkBA = new BankAccount();
+
+            // Act
+            decimal result = checkBA.GetBalance();
+
+            // Assert
+            Assert.Equal(0, result);
         }
     }
 }
