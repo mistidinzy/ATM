@@ -25,9 +25,11 @@ namespace ATM.Tests
             BankAccount bankaccount = new BankAccount();
 
             // Act
-            decimal result = bankaccount.Deposit();
+            bankaccount.Deposit(40);
 
             // Assert
+            decimal newBalance = bankaccount.GetBalance();
+            Assert.Equal(40, newBalance);
         }
 
         [Fact]
@@ -39,16 +41,8 @@ namespace ATM.Tests
             // Assert
             Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
-
-             // Act
-               
-
+                bankaccount.Deposit(-10);
             });
-
-           
-
-
-
         }
     }
 }
