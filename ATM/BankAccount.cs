@@ -10,5 +10,21 @@ namespace ATM
         {
             return balance;
         }
+
+        public void Deposit(decimal depositMoney)
+        {
+            if (depositMoney < 0){ throw new ArgumentOutOfRangeException("Deposit amount cannot be negative."); }
+
+            balance += depositMoney;
+        }
+
+
+
+
+
+
+
+
+
     }
 }
