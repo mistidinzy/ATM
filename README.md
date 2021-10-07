@@ -21,15 +21,17 @@ _____
 ### Solution will include
 
 * Class: BankAccount
-    * private decimal field
-    * Method: decimal GetBalance()
-    * Method: void Deposit()
-    * Method: void Withdraw()
+  * private decimal field
+  * Method: decimal GetBalance()
+  * Method: void Deposit()
+  * Method: void Withdraw()
 
 _____
 
 ## Example
 <!-- Show them what looks like and how how to use the application.  -->
+
+![console example](image.png)
 
 _____
 
@@ -39,9 +41,3 @@ _____
 I will use Visual Studio to write my code, using C# as the language, and .NET 5.0 as the runtime.
 
 _____
-
-## Change Log
-
-<!-- Use this are to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an example:
-
-01-01-2001 4:59pm - Added functionality to add and delete some things. -->
