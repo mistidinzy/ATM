@@ -3,15 +3,16 @@ using Xunit;
 
 namespace ATM.Tests
 {
-    public class UnitTest1
+    public class BankAccountTests
     {
+        //[Fact]
+        //public void Test1()
+        //{
+        //    int zero = 1 - 2;
+        //    int num = 7 / zero;
+        //}
+
         [Fact]
-<<<<<<< Updated upstream
-        public void Test1()
-        {
-            int zero = 1 - 2;
-            int num = 7 / zero;
-=======
         public void GetBalance_Returns_Zero_Balance_For_New_Account()
         {
             // Arrange
@@ -36,6 +37,21 @@ namespace ATM.Tests
             // Assert
             decimal newBalance = bankaccount.GetBalance();
             Assert.Equal(30, newBalance);
+        }
+
+        [Fact]
+        public void Deposit_Adds_Correct_Amount()
+        {
+            // Arrange
+            BankAccount bankaccount = new BankAccount();
+
+            // Act
+            bankaccount.Deposit(30);
+            bankaccount.Deposit(50);
+
+            // Assert
+            decimal newBalance = bankaccount.GetBalance();
+            Assert.Equal(80, newBalance);
         }
 
         [Fact]
@@ -64,9 +80,7 @@ namespace ATM.Tests
             //Assert
             decimal newBalance = bankaccount.GetBalance();
             Assert.Equal(2, newBalance);
->>>>>>> Stashed changes
         }
-
 
         [Fact]
         public void Withdraw_Amount_Is_More_Than_Balance()
@@ -78,11 +92,9 @@ namespace ATM.Tests
             // Assert
             Assert.Throws<ArgumentException>(() =>
             {
-                //Act
-                bankaccount.Withdraw(1);
-            }
-            );
+            //Act
+            bankaccount.Withdraw(5);
+            });
         }
-
-    } //nothing outside of here
+    } 
 }
