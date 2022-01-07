@@ -28,13 +28,6 @@ _____
 
 _____
 
-## Example
-<!-- Show them what looks like and how how to use the application.  -->
-
-![console example](image.png)
-
-_____
-
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
 
