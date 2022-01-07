@@ -37,13 +37,5 @@ namespace ATM
 
             balance -= amountToWithdraw;
         }
-
-
-
-
-
-
-
-
     }
 }
