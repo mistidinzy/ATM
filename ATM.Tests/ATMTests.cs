@@ -54,7 +54,6 @@ namespace ATM.Tests
             Assert.Equal(80, newBalance);
         }
 
-
         [Fact]
         public void Throws_If_Negative_Deposit()
         {
