@@ -36,7 +36,6 @@ namespace ATM
             decimal newBalance = balance - amountToWithdraw;
 
             balance -= amountToWithdraw;
-
         }
 
 
