@@ -5,13 +5,14 @@ namespace ATM.Tests
 {
     public class UnitTest1
     {
+        //[Fact]
+        //public void Test1()
+        //{
+        //    int zero = 1 - 2;
+        //    int num = 7 / zero;
+        //}
+
         [Fact]
-<<<<<<< Updated upstream
-        public void Test1()
-        {
-            int zero = 1 - 2;
-            int num = 7 / zero;
-=======
         public void GetBalance_Returns_Zero_Balance_For_New_Account()
         {
             // Arrange
@@ -64,9 +65,7 @@ namespace ATM.Tests
             //Assert
             decimal newBalance = bankaccount.GetBalance();
             Assert.Equal(2, newBalance);
->>>>>>> Stashed changes
         }
-
 
         [Fact]
         public void Withdraw_Amount_Is_More_Than_Balance()
@@ -78,11 +77,9 @@ namespace ATM.Tests
             // Assert
             Assert.Throws<ArgumentException>(() =>
             {
-                //Act
-                bankaccount.Withdraw(1);
-            }
-            );
+            //Act
+            bankaccount.Withdraw(1);
+            });
         }
-
-    } //nothing outside of here
+    } 
 }

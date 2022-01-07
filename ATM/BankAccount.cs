@@ -5,7 +5,6 @@ namespace ATM
     {
         private decimal balance;
 
-       
         public decimal GetBalance()
         {
             return balance;
