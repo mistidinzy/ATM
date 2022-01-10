@@ -43,8 +43,8 @@ namespace ATM
         public static void ReadFromFile(string fileName)
         {
             Console.WriteLine("Reading {0}...", fileName);
-            File.ReadAllText(fileName);
-
+            string fileText = File.ReadAllText(fileName);
+            Console.WriteLine(fileText);
         }
 
 
