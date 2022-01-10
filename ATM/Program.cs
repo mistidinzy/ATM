@@ -11,6 +11,8 @@ namespace ATM
     {
       BankAccount.ReadFromFile("test.txt");
 
+
+
       WriteWelcome();
 
       while (PromptForContinue() == 1)

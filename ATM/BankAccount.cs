@@ -47,6 +47,19 @@ namespace ATM
             Console.WriteLine(fileText);
         }
 
+        public static void OutputEvenLinesFromFile(string fileName)
+        {
+            string[] lines = File.ReadAllLines(fileName);
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                if( i % 2 == 0)
+                {
+                    Console.WriteLine(lines[i]);
+                }
+            }
+        }
+
 
         //private string WriteToLog(int entry)
         //{
