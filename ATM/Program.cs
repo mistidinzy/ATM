@@ -9,6 +9,8 @@ namespace ATM
 
     public static void Main(string[] args)
     {
+      BankAccount.ReadFromFile("test.txt");
+
       WriteWelcome();
 
       while (PromptForContinue() == 1)

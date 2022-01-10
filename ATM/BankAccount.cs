@@ -1,4 +1,6 @@
 ﻿using System;
+using System.IO;
+
 namespace ATM
 {
     public class BankAccount
@@ -37,5 +39,21 @@ namespace ATM
 
             balance -= amountToWithdraw;
         }
+
+        public static void ReadFromFile(string fileName)
+        {
+            Console.WriteLine("Reading {0}...", fileName);
+            File.ReadAllText(fileName);
+
+        }
+
+
+        //private string WriteToLog(int entry)
+        //{
+
+        //    string transaction;
+
+        //    return transaction;
+        //}
     }
 }
