@@ -9,8 +9,8 @@ namespace ATM
 
     public static void Main(string[] args)
     {
-      BankAccount.ReadFromFile("test.txt");
-      BankAccount.OutputEvenLinesFromFile("test.txt");
+      BankAccount.ReadFromFile("Log.txt");
+      BankAccount.OutputEvenLinesFromFile("Log.txt");
 
       WriteWelcome();
 

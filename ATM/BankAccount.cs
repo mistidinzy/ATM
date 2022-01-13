@@ -5,15 +5,7 @@ namespace ATM
 {
     public class BankAccount
     {
-        private string WriteToLog(string logEntry)
-        {
-            string transaction = $"{DateTime.Today:yyyy-MM-dd}: {logEntry}\n";
-
-            Console.WriteLine(transaction);
-
-            return transaction;
-        }
-
+        #region
         private decimal balance;
 
         public decimal GetBalance()
@@ -50,6 +42,21 @@ namespace ATM
             WriteToLog(logAmount);
         }
 
+        #endregion
+
+        //----------System IO--------------//
+
+        #region
+        private string WriteToLog(string logEntry)
+        {
+            string transaction = $"{DateTime.Today:yyyy-MM-dd}: {logEntry}\n";
+
+            //Console.WriteLine(transaction);
+            File.AppendAllText("Log.txt", transaction);
+
+            return transaction;
+        }
+
         public static void ReadFromFile(string fileName)
         {
             Console.WriteLine("Reading {0}...", fileName);
@@ -69,5 +76,7 @@ namespace ATM
                 }
             }
         }
+
+        #endregion
     }
 }
