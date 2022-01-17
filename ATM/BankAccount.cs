@@ -21,6 +21,9 @@ namespace ATM
             }
 
             balance += depositMoney;
+
+            string logAmount = balance.ToString();
+            WriteToLog(logAmount);
         }
 
         public void Withdraw(decimal amountToWithdraw)
@@ -47,15 +50,6 @@ namespace ATM
         //----------System IO--------------//
 
         #region
-        private string WriteToLog(string logEntry)
-        {
-            string transaction = $"{DateTime.Today:yyyy-MM-dd}: {logEntry}\n";
-
-            //Console.WriteLine(transaction);
-            File.AppendAllText("Log.txt", transaction);
-
-            return transaction;
-        }
 
         public static void ReadFromFile(string fileName)
         {
@@ -64,18 +58,28 @@ namespace ATM
             Console.WriteLine(fileText);
         }
 
-        public static void OutputEvenLinesFromFile(string fileName)
+        public static void WriteToLog(string logEntry)
         {
-            string[] lines = File.ReadAllLines(fileName);
+            string transaction = $"{DateTime.Today:yyyy-MM-dd}: {logEntry}\n";
 
-            for (int i = 0; i < lines.Length; i++)
-            {
-                if( i % 2 == 0)
-                {
-                    Console.WriteLine(lines[i]);
-                }
-            }
+            //Console.WriteLine(transaction);
+            File.AppendAllText("Log.txt", transaction);
+
+            Console.WriteLine("Transaction Log has been updated.");
         }
+
+        //public static void OutputEvenLinesFromFile(string fileName)
+        //{
+        //    string[] lines = File.ReadAllLines(fileName);
+
+        //    for (int i = 0; i < lines.Length; i++)
+        //    {
+        //        if( i % 2 == 0)
+        //        {
+        //            Console.WriteLine(lines[i]);
+        //        }
+        //    }
+        //}
 
         #endregion
     }
