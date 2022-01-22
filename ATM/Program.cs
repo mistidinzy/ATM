@@ -4,7 +4,6 @@ namespace ATM
 {
   class Program
   {
-    //private static readonly BankAccount account field
     private static readonly BankAccount userAccount = new BankAccount();
 
     public static void Main(string[] args)
@@ -82,5 +81,10 @@ namespace ATM
 
       ATM.WriteGoodbye();
     }
-  }
+
+        public static void DisplayTransactionLog()
+        {
+
+        }
+    }
 }

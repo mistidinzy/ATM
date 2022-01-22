@@ -3,9 +3,7 @@ namespace ATM
 {
     public class ATM
     {
-        public ATM()
-        {
-        }
+        private static readonly BankAccount userAccount = new BankAccount();
 
         public static void WriteWelcome()
         {

@@ -62,24 +62,28 @@ namespace ATM
         {
             string transaction = $"{DateTime.Today:yyyy-MM-dd}: {logEntry}\n";
 
-            //Console.WriteLine(transaction);
-            File.AppendAllText("Log.txt", transaction);
+            string[] lines = new string[] { logEntry };
+            File.AppendAllLines("Log.txt", lines);
 
             Console.WriteLine("Transaction Log has been updated.");
         }
 
-        //public static void OutputEvenLinesFromFile(string fileName)
-        //{
-        //    string[] lines = File.ReadAllLines(fileName);
+        public static string[] GetLog(string fileName)
+        {
+            string[] lines = File.ReadAllLines(fileName);
 
-        //    for (int i = 0; i < lines.Length; i++)
-        //    {
-        //        if( i % 2 == 0)
-        //        {
-        //            Console.WriteLine(lines[i]);
-        //        }
-        //    }
-        //}
+            for (int i = 0; i < lines.Length; i++)
+            {
+                Console.WriteLine(lines[i]);
+            }
+
+            return lines;
+        }
+
+        public static void ClearLog(string fileName)
+        {
+            File.WriteAllText(fileName, "");
+        }
 
         #endregion
     }
