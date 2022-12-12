@@ -5,7 +5,6 @@ namespace ATM
 {
   public class BankAccount
   {
-    #region
     private decimal balance;
 
     public decimal GetBalance()
@@ -22,8 +21,7 @@ namespace ATM
 
       balance += depositMoney;
 
-      string logAmount = balance.ToString();
-      WriteToLog(logAmount);
+      WriteToLog(balance.ToString());
     }
 
     public void Withdraw(decimal amountToWithdraw)
@@ -39,24 +37,19 @@ namespace ATM
         throw new ArgumentOutOfRangeException("You cannot withdraw a negative amount. Please enter a valid amount to withdraw.");
       }
 
-      decimal newBalance = balance - amountToWithdraw;
-
       balance -= amountToWithdraw;
 
-      string logAmount = balance.ToString();
-      WriteToLog(logAmount);
+      WriteToLog(balance.ToString());
     }
 
-    #endregion
-
     //----------System IO--------------//
-
-    #region
 
     public static void ReadFromFile(string fileName)
     {
       Console.WriteLine("Reading {0}...", fileName);
+
       string fileText = File.ReadAllText(fileName);
+
       Console.WriteLine(fileText);
     }
 
@@ -65,8 +58,10 @@ namespace ATM
       string transaction = $"{DateTime.Today:yyyy-MM-dd}: {logEntry}\n";
 
       string[] lines = new string[] { logEntry };
+
       File.AppendAllLines("Log.txt", lines);
 
+      Console.WriteLine(" ");
       Console.WriteLine("Transaction Log has been updated.");
     }
 
@@ -86,7 +81,5 @@ namespace ATM
     {
       File.WriteAllText(fileName, "");
     }
-
-    #endregion
   }
 }

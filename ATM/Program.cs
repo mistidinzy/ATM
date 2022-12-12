@@ -8,7 +8,6 @@ namespace ATM
 
     public static void Main(string[] args)
     {
-      BankAccount.ReadFromFile("Log.txt");
       ATM.WriteWelcome();
 
       while (ATM.PromptForContinue() == 1)
@@ -17,60 +16,59 @@ namespace ATM
 
         if (userInput == 1)
         {
-          ATM.ViewBalance();
+          Console.WriteLine(" ");
+          Console.WriteLine("---------------------------------------------------");
+          Console.ForegroundColor = ConsoleColor.Green;
+          Console.WriteLine($"Your current balance is ${userAccount.GetBalance()}.");
+          Console.ResetColor();
+          Console.WriteLine("---------------------------------------------------");
+          Console.WriteLine(" ");
         }
         else if (userInput == 2)
         {
           Console.WriteLine(" ");
           Console.WriteLine("---------------------------------------------------");
+          Console.ForegroundColor = ConsoleColor.Cyan;
           Console.WriteLine("Please enter the amount you are depositing today.");
+          Console.ResetColor();
           Console.WriteLine("---------------------------------------------------");
-          Console.WriteLine(" ");
-
-          string amount = Console.ReadLine();
-          decimal depositMoney = Convert.ToDecimal(amount);
+          decimal depositMoney = Convert.ToDecimal(Console.ReadLine());
           userAccount.Deposit(depositMoney);
-
           Console.WriteLine(" ");
-          Console.WriteLine("---------------------------------------------------");
           Console.WriteLine($"Your deposit of ${depositMoney} is complete!");
           Console.WriteLine(" ");
-
-          decimal newBalance = userAccount.GetBalance();
-
-          Console.WriteLine(" ");
-          Console.WriteLine($"Your new balance is ${newBalance}.");
-          Console.WriteLine("---------------------------------------------------");
+          Console.ForegroundColor = ConsoleColor.Green;
+          Console.WriteLine($"Your new balance is ${userAccount.GetBalance()}.");
+          Console.ResetColor();
+          //Console.WriteLine("---------------------------------------------------");
         }
         else if (userInput == 3)
         {
           Console.WriteLine(" ");
           Console.WriteLine("---------------------------------------------------");
+          Console.ForegroundColor = ConsoleColor.Cyan;
           Console.WriteLine("Please enter the amount you would like to withdraw.");
+          Console.ResetColor();
           Console.WriteLine("---------------------------------------------------");
-          Console.WriteLine(" ");
-
-          string amount = Console.ReadLine();
-          decimal amountToWithdraw = Convert.ToDecimal(amount);
+          decimal amountToWithdraw = Convert.ToDecimal(Console.ReadLine());
           userAccount.Withdraw(amountToWithdraw);
-
           Console.WriteLine(" ");
-          Console.WriteLine("---------------------------------------------------");
           Console.WriteLine($"Your withdrawal of ${amountToWithdraw} is complete!");
           Console.WriteLine(" ");
-
-          decimal newBalance = userAccount.GetBalance();
-
-          Console.WriteLine(" ");
-
-          Console.WriteLine("---------------------------------------------------");
-          Console.WriteLine($"Your new balance is ${newBalance}.");
-          Console.WriteLine("---------------------------------------------------");
+          Console.ForegroundColor = ConsoleColor.Green;
+          Console.WriteLine($"Your new balance is ${userAccount.GetBalance()}.");
+          Console.ResetColor();
+          //Console.WriteLine("---------------------------------------------------");
           Console.WriteLine(" ");
         }
         else if (userInput == 4)
         {
-          return;
+          break;
+        }
+
+        else if(userInput == 5)
+        {
+          DisplayTransactionLog();
         }
 
         else if (ATM.PromptForContinue() == 2)
@@ -84,7 +82,7 @@ namespace ATM
 
     public static void DisplayTransactionLog()
     {
-
+      BankAccount.GetLog("Log.txt");
     }
   }
 }
