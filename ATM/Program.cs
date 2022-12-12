@@ -82,9 +82,9 @@ namespace ATM
       ATM.WriteGoodbye();
     }
 
-        public static void DisplayTransactionLog()
-        {
+    public static void DisplayTransactionLog()
+    {
 
-        }
     }
+  }
 }
