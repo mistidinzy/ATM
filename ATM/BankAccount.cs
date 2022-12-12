@@ -21,7 +21,7 @@ namespace ATM
 
       balance += depositMoney;
 
-      WriteToLog(balance.ToString());
+      WriteToLog("Deposit", depositMoney.ToString());
     }
 
     public void Withdraw(decimal amountToWithdraw)
@@ -39,7 +39,7 @@ namespace ATM
 
       balance -= amountToWithdraw;
 
-      WriteToLog(balance.ToString());
+      WriteToLog("Withdrawal", amountToWithdraw.ToString());
     }
 
     //----------System IO--------------//
@@ -53,9 +53,11 @@ namespace ATM
       Console.WriteLine(fileText);
     }
 
-    public static void WriteToLog(string logEntry)
+    private void WriteToLog(string action, string logEntry)
     {
-      string transaction = $"{DateTime.Today:yyyy-MM-dd}: {logEntry}\n";
+      decimal balance = GetBalance();
+
+      string transaction = $"({DateTime.Today:yyyy-MM-dd}): {action} | Amount: ${logEntry} | New Balance: ${balance}\n";
 
       string[] lines = new string[] { transaction };
 
