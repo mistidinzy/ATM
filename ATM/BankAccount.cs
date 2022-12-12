@@ -57,7 +57,7 @@ namespace ATM
     {
       string transaction = $"{DateTime.Today:yyyy-MM-dd}: {logEntry}\n";
 
-      string[] lines = new string[] { logEntry };
+      string[] lines = new string[] { transaction };
 
       File.AppendAllLines("Log.txt", lines);
 
