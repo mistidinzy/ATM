@@ -63,12 +63,12 @@ namespace ATM
         }
         else if (userInput == 4)
         {
-          break;
+          DisplayTransactionLog();
         }
 
         else if(userInput == 5)
         {
-          DisplayTransactionLog();
+          break;
         }
 
         else if (ATM.PromptForContinue() == 2)

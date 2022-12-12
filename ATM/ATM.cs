@@ -34,10 +34,10 @@ namespace ATM
                 Console.WriteLine("1. Check My Balance");
                 Console.WriteLine("2. Make a Deposit");
                 Console.WriteLine("3. Make a Withdrawal");
+                Console.WriteLine("4. View Transaction Log");
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("5. Exit");
                 Console.ResetColor();
-                Console.WriteLine("5. View Transaction Log");
                 Console.WriteLine(" ");
                 Console.WriteLine("---------------------------------------------------");
                 Console.WriteLine(" ");
