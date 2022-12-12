@@ -10,9 +10,9 @@ namespace ATM
             Console.WriteLine(" ");
             Console.WriteLine("---------------------------------------------------");
             Console.WriteLine(" ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Hello! Welcome to The Bank!");
-            Console.WriteLine(" ");
-            Console.WriteLine("---------------------------------------------------");
+            Console.ResetColor();
             Console.WriteLine(" ");
         }
 
@@ -23,10 +23,9 @@ namespace ATM
                 Console.WriteLine(" ");
                 Console.WriteLine("---------------------------------------------------");
                 Console.WriteLine(" ");
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine("What would you like to do today?");
-                Console.WriteLine(" ");
-                Console.WriteLine("---------------------------------------------------");
-
+                Console.ResetColor();
                 Console.WriteLine(" ");
                 Console.WriteLine("---------------------------------------------------");
                 Console.WriteLine("Select a number from the options below:");
@@ -35,7 +34,10 @@ namespace ATM
                 Console.WriteLine("1. Check My Balance");
                 Console.WriteLine("2. Make a Deposit");
                 Console.WriteLine("3. Make a Withdrawal");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("4. View Transaction Log");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("5. Exit");
+                Console.ResetColor();
                 Console.WriteLine(" ");
                 Console.WriteLine("---------------------------------------------------");
                 Console.WriteLine(" ");
@@ -56,13 +58,16 @@ namespace ATM
 
         public static int PromptForContinue()
         {
-            Console.WriteLine(" ");
             Console.WriteLine("---------------------------------------------------");
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Please select a number from the options below:");
+            Console.ResetColor();
             Console.WriteLine("---------------------------------------------------");
             Console.WriteLine(" ");
             Console.WriteLine("1. Next");
+            Console.ForegroundColor = ConsoleColor.Red;
             Console.WriteLine("2. Exit");
+            Console.ResetColor();
             Console.WriteLine(" ");
             Console.WriteLine("---------------------------------------------------");
             Console.WriteLine(" ");
@@ -88,10 +93,13 @@ namespace ATM
             Console.WriteLine(" ");
             Console.WriteLine("---------------------------------------------------");
             Console.WriteLine(" ");
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Thank you for choosing The Bank. Goodbye!");
+            Console.ResetColor();
             Console.WriteLine(" ");
             Console.WriteLine("---------------------------------------------------");
             Console.WriteLine(" ");
+            BankAccount.ClearLog("Log.txt");
         }
     }
 }
