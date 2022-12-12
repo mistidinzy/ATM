@@ -11,4 +11,12 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="7.0.0" />
   </ItemGroup>
+  <ItemGroup>
+    <None Update="test.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Log.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 </Project>
