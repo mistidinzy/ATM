@@ -12,7 +12,8 @@
 | *Skip To...* |
 |-|
 | [Lab 02: *ATM*](#lab-02-atm) |
-| [Lab 03: *System IO*](#lab-03-system-io)
+| [Lab 03: *System IO*](#lab-03-system-io) |
+| [Examples](#examples)
 
 ---
 
@@ -104,5 +105,11 @@ Create a ***transaction log*** for your 'ATM' console program.
   - Create a method named `DisplayTransactionLog`
     - Prints the contents of the transaction log.
     - Add an option to your User Interface to see the contents of the transaction log.
+
+---
+
+### Examples
+
+![Example 1](./assets/img/ATM-example.png)
 
 ---
