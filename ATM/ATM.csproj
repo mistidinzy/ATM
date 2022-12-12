@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Microsoft.NETCore.Platforms" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="7.0.0" />
+  </ItemGroup>
+  <ItemGroup>
     <None Update="test.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
